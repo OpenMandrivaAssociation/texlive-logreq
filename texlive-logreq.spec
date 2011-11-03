@@ -1,3 +1,9 @@
+# revision 19640
+# category Package
+# catalog-ctan /macros/latex/contrib/logreq
+# catalog-date 2010-08-11 13:58:09 +0200
+# catalog-license lppl1.3
+# catalog-version 1.0
 Name:		texlive-logreq
 Version:	1.0
 Release:	1
@@ -58,6 +64,7 @@ external XML file at the end of the document.
 %doc %{_texmfdistdir}/doc/latex/logreq/examples/04-biblatex+bibtex+refsections.tex
 %doc %{_texmfdistdir}/doc/latex/logreq/examples/05-biblatex+biber.run.xml
 %doc %{_texmfdistdir}/doc/latex/logreq/examples/05-biblatex+biber.tex
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -68,3 +75,5 @@ external XML file at the end of the document.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
