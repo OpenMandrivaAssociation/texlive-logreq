@@ -17,8 +17,6 @@ BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
 Requires(post):	texlive-kpathsea
-Conflicts:	texlive-texmf <= 20110705-3
-Conflicts:	texlive-doc <= 20110705-3
 
 %description
 The package helps to automate a typical LaTeX workflow that
@@ -34,20 +32,12 @@ enable package authors to use LaTeX commands to issue requests,
 2) collect all requests from all packages and write them to an
 external XML file at the end of the document.
 
-%pre
-    %_texmf_mktexlsr_pre
-
 %post
-    %_texmf_mktexlsr_post
-
-%preun
-    if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_pre
-    fi
+    %{_sbindir}/texlive.post
 
 %postun
     if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_post
+	%{_sbindir}/texlive.post
     fi
 
 #-----------------------------------------------------------------------
@@ -65,7 +55,6 @@ external XML file at the end of the document.
 %doc %{_texmfdistdir}/doc/latex/logreq/examples/04-biblatex+bibtex+refsections.tex
 %doc %{_texmfdistdir}/doc/latex/logreq/examples/05-biblatex+biber.run.xml
 %doc %{_texmfdistdir}/doc/latex/logreq/examples/05-biblatex+biber.tex
-%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -76,5 +65,3 @@ external XML file at the end of the document.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc %{buildroot}%{_texmfdistdir}
-mkdir -p %{buildroot}%{_tlpkgobjdir}
-cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
