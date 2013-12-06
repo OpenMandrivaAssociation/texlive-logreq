@@ -6,7 +6,7 @@
 # catalog-version 1.0
 Name:		texlive-logreq
 Version:	1.0
-Release:	5
+Release:	6
 Summary:	Support for automation of the LaTeX workflow
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/logreq
