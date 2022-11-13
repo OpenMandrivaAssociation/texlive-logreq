@@ -1,18 +1,12 @@
-# revision 19640
-# category Package
-# catalog-ctan /macros/latex/contrib/logreq
-# catalog-date 2010-08-11 13:58:09 +0200
-# catalog-license lppl1.3
-# catalog-version 1.0
 Name:		texlive-logreq
-Version:	1.0
-Release:	12
+Version:	53003
+Release:	1
 Summary:	Support for automation of the LaTeX workflow
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/logreq
 License:	LPPL1.3
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/logreq.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/logreq.doc.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/logreq.r%{version}.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/logreq.doc.r%{version}.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -33,12 +27,12 @@ enable package authors to use LaTeX commands to issue requests,
 external XML file at the end of the document.
 
 %post
-    %{_sbindir}/texlive.post
+%{_sbindir}/texlive.post
 
 %postun
-    if [ $1 -eq 0 ]; then
+if [ $1 -eq 0 ]; then
 	%{_sbindir}/texlive.post
-    fi
+fi
 
 #-----------------------------------------------------------------------
 %files
@@ -58,24 +52,10 @@ external XML file at the end of the document.
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1
+%autosetup -p1 -c -a1
 
 %build
 
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc %{buildroot}%{_texmfdistdir}
-
-
-%changelog
-* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 1.0-2
-+ Revision: 753457
-- Rebuild to reduce used resources
-
-* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 1.0-1
-+ Revision: 718880
-- texlive-logreq
-- texlive-logreq
-- texlive-logreq
-- texlive-logreq
-
