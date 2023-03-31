@@ -1,6 +1,6 @@
 Name:		texlive-logreq
 Version:	53003
-Release:	1
+Release:	2
 Summary:	Support for automation of the LaTeX workflow
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/logreq
