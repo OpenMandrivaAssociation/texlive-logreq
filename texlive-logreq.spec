@@ -3,7 +3,7 @@ Version:	53003
 Release:	2
 Summary:	Support for automation of the LaTeX workflow
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/logreq
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/logreq
 License:	LPPL1.3
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/logreq.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/logreq.doc.r%{version}.tar.xz
